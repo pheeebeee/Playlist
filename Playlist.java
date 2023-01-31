@@ -76,11 +76,22 @@ public class Playlist {
         }
         return likedSongs;
       }
+      public String totalDuration(){
+        int totalDuration = 0;
+        for(int i = 0; i<songs.size(); i++){
+          Song current = songs.get(i);
+          int currLength = current.getLength();
+          totalDuration +=currLength;
+        }
+        String finalTotalDuration = " (" + totalDuration / 60 + " : " + totalDuration % 60 + ") ";
+        return finalTotalDuration;
+
+      }
       public void likeSong(){
         
       }
-      public void removeSong(Song song){
-        songs.remove(song);
+      public void removeSong(int index){
+        songs.remove(index);
 
 }
 }
