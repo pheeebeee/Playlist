@@ -43,6 +43,23 @@ public class Playlist {
         songs.remove(index-1);
       }
       public ArrayList<String> examineSongs(){
+        ArrayList<String> allSongs = new ArrayList<>();
+        for(int i =0; i<songs.size(); i++){
+          Song current = songs.get(i);
+          String currName = current.getName();
+          int currLength = current.getLength();
+          String currFinalLength = " (" + currLength / 60 + " : " + currLength % 60 + ") ";
+          String currArtist = current.getArtist();
+          boolean currLiked = current.getLiked();
+          String summary = "\"" + currName + "\"" + "by" + currArtist + currFinalLength;
+          if(currLiked == true){
+            summary += "--liked";
+          }
+          allSongs.add(summary);
+        }
+        return allSongs; 
+      }
+      public ArrayList<String> examineLikedSongs(){
         ArrayList<String> likedSongs = new ArrayList<>();
         for(int i =0; i<songs.size(); i++){
           Song current = songs.get(i);
@@ -52,15 +69,13 @@ public class Playlist {
           String currArtist = current.getArtist();
           boolean currLiked = current.getLiked();
           String summary = "\"" + currName + "\"" + "by" + currArtist + currFinalLength;
-          if(currLiked){
+          if(currLiked == true){
             summary += "--liked";
-          }
-          if(currLiked){
             likedSongs.add(summary);
           }
-
         }
-      } 
+        return likedSongs;
+      }
       public void likeSong(){
         
       }
