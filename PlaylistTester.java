@@ -6,10 +6,12 @@
  * @author
  * @version
  */
+import java.util.*;
 public class PlaylistTester {
     public static void main(String[] args) {
         System.out.println("Initializing a Playlist...\n");
         //Make your playlist here
+        Playlist p = new Playlist();
 
         System.out.println("Adding songs to the Playlist...\n");
         /**
@@ -17,12 +19,19 @@ public class PlaylistTester {
          * is something like...
          * p.addSong(new Song(..., ..., ...))
          */
+        
+        p.addSong(new Song("Bigmouth Strikes Again", "The Smiths", "3:24"));
+        p.addSong(new Song("Where The Streets Have No Name", "U2", "5:38"));
+        p.addSong(new Song("Police And Thieves", "The Clash", "6:03"));
+        
 
 
 
         System.out.println("Printing the songs...\n");
         //Print out all the songs in the playlist to verify it's working correctly
-
+        ArrayList<String> summary = new ArrayList<>();
+        summary = p.examineSongs();
+        System.out.println(summary);
 
         System.out.println("\nLiking the songs in position X, Y, Z, etc....\n");
         //Once your songs are 'liked', this should be reflected in the next printout
