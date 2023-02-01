@@ -23,8 +23,12 @@ public class PlaylistTester {
         p.addSong(new Song("Bigmouth Strikes Again", "The Smiths", "3:24"));
         p.addSong(new Song("Where The Streets Have No Name", "U2", "5:38"));
         p.addSong(new Song("Police And Thieves", "The Clash", "6:03"));
-        
-
+        p.addSong(new Song("Roxanne", "The Police", "3:12"));
+        p.addSong(new Song("Step To My Girl", "Souls of Mischief", "4:08"));
+        p.addSong(new Song("I Confess", "English Beat", "4:31"));
+        p.addSong(new Song("Dim All The Lights", "Donna Summer", "4:40"));
+        p.addSong(new Song("Passin Me By", "The Pharcyde", "5:03"));
+    
 
 
         System.out.println("Printing the songs...\n");
