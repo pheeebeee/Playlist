@@ -104,8 +104,8 @@ public class Playlist {
         for(int i =0; i<songs.size(); i++){
           Song current = songs.get(i);
           boolean currLiked = current.getLiked();
-        if(currLiked == false){
-          songs.remove(currLiked);
+        if(currLiked != false){
+          songs.remove(current);
         }
       }
 
