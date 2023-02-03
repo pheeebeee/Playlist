@@ -8,7 +8,7 @@ public class Song {
     private String title;
     private String artist;
     private boolean liked;
-    private String duration;
+    private int duration;
 
     /**
      * Constructor-- what information needs to be given to make a Song?
@@ -18,7 +18,12 @@ public class Song {
         title  = myTitle;
         artist = myArtist;
         liked = false;
-        duration = myDuration;
+        int minSum = Integer.parseInt(myDuration.substring(0,1));
+        int secSum = Integer.parseInt(myDuration.substring(2,4));
+        duration = minSum*60 + secSum;
+        
+        
+
         
     }
 
