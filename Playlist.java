@@ -1,4 +1,9 @@
 import java.util.*;
+/**
+ * File for a Song class to be used in the Playlist Project
+ * @author Phoebe Salvati
+ * @version January 2023
+ */
 
 
 /**
@@ -11,8 +16,6 @@ public class Playlist {
      * (CarDealership, Zoo) for structure on how this will look
      */
     private ArrayList<Song> songs;
-
-
 
 
      /**
@@ -59,6 +62,12 @@ public class Playlist {
         }
         return allSongs; 
       }
+      public void likeSong(int index){
+        Song likedSong = songs.get(index-1);
+        likedSong.like();
+
+
+      }
       public ArrayList<String> examineLikedSongs(){
         ArrayList<String> likedSongs = new ArrayList<>();
         for(int i =0; i<songs.size(); i++){
@@ -90,8 +99,17 @@ public class Playlist {
       public void likeSong(){
         
       }
-      public void removeSong(int index){
-        songs.remove(index);
+      public void removeUnlikedSongs(){
+        ArrayList<String> allSongs = new ArrayList<>();
+        for(int i =0; i<songs.size(); i++){
+          Song current = songs.get(i);
+          boolean currLiked = current.getLiked();
+        if(currLiked == false){
+          songs.remove(currLiked);
+        }
+      }
+
+        
 
 }
 }
